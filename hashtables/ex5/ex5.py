@@ -6,7 +6,7 @@ def finder(files, queries):
         if cur in query_dict:
             query_dict[cur].append(i)
         else:
-            query_dict[i] = [i]
+            query_dict[cur] = [i]
     for n in queries:
         if n in query_dict:
             result += [i for i in query_dict[n]]
