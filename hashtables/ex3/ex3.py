@@ -1,9 +1,14 @@
-def intersection(arrays):
-
-    """
-    YOUR CODE HERE
-    """
-
+def intersection(arr):
+    nums = {}
+    result = []
+    arr = sorted(arr, key=lambda x: len(x))
+    for i in arr[0]:
+        nums[i] = 1
+    for i in arr[1:]:
+        for n in i:
+            if n in nums:
+                nums[n] += 1
+    result = [a for a in nums if nums[a] == len(arr)]
     return result
 
 
